@@ -4,16 +4,16 @@ SpigotMC-manager is a set of scripts to make managing a SpigotMC Minecraft serve
 ## Capabilities
 
 ### Things it does now:
-[x] Sets up a SpigotMC server running under a dedicated user.
-[x] Can set up multiple instances under different users on one system.
-[x] Updates SpigotMC and mcrcon.
-[x] Provides a systemd service file for keeping track of each service.
+* Sets up a SpigotMC server running under a dedicated user.
+* Can set up multiple instances under different users on one system.
+* Updates SpigotMC and mcrcon.
+* Provides a systemd service file for keeping track of each service.
 
 ### Things it does not do yet, but are intended:
-[ ] Input validation. Most errors will stop the install and clean up the mess.
-[ ] Smart updates that only compile new code when it's actually changed.
-[ ] Command line options for scripted installs.
-[ ] Regular automatic updates via systemd timer.
+* Input validation. Most errors will stop the install and clean up the mess.
+* Smart updates that only compile new code when it's actually changed.
+* Command line options for scripted installs.
+* Regular automatic updates via systemd timer.
 
 ### Things that are out of scope:
 * Multiple instances under one user.
