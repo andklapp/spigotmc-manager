@@ -1,6 +1,10 @@
 # SpigotMC-manager
 SpigotMC-manager is a set of scripts to make managing a SpigotMC Minecraft server easier.
 
+### Notice
+This is pretty casually developed software. It may contain bugs. If you think you've found
+one, please submit an issue.
+
 ## Capabilities
 
 ### Things it does now:
