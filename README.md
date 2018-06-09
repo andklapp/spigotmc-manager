@@ -23,9 +23,19 @@ one, please submit an issue.
 * Multiple instances under one user.
 * Set up an instance under an existing user.
 
+## Dependencies
+* Java
+* Git
+* build-essential (for Ubuntu/Debian)
+
 ## Usage
 * To install a server, run the `install.sh` script provided and follow the prompts.
 * Starting, stopping, and restarting can all be done with systemctl as usual.
 * Updating can be done by calling the `update-spigot.sh` and `update-mcrcon.sh` as the dedicated user.
 * Uninstalling a server can be done with the `uninstall.sh` script in the user's home directory as
     the root user.
+
+## Notes
+Ubuntu 18.04 changed the the way Java stores SSL keys. This will break SPigotMC's BuildTools. See
+[this StackOverflow question](https://stackoverflow.com/questions/6784463/error-trustanchors-parameter-must-be-non-empty#6788682)
+for a workaround.
