@@ -3,7 +3,8 @@ User=minecraft
 Group=minecraft
 Nice=5
 KillMode=none
-SuccessExitStatus=0 1
+SuccessExitStatus=0
+RemainAfterExit=yes
 
 ProtectSystem=full
 PrivateDevices=true
