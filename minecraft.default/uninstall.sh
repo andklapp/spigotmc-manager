@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 minecraft_user=minecraft
 minecraft_home=/home/minecraft
 minecraft_service_file=/etc/systemd/system/minecraft.service
