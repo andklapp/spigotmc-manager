@@ -5,7 +5,8 @@ source "${HOME}/lib.common.sh" || exit 1
 
 buildtools_url="https://hub.spigotmc.org/jenkins/job/BuildTools/lastStableBuild/artifact/target/BuildTools.jar"
 build_dir="${HOME}/build/spigot"
-server_path="${HOME}/server/spigot.jar"
+server_dir="${HOME}/server"
+server_path="${server_dir}/spigot.jar"
 
 mkdir -p "${build_dir}"
 cd "${build_dir}" || fatal "Failed to move to build directory."
@@ -19,5 +20,6 @@ java -jar BuildTools.jar || fatal "Failed to update Spigot."
 # cut -d "/" in this case is a quick-n-dirty basename.
 fresh_build_name="$(grep "Saved as ./spigot" "BuildTools.log.txt" | cut -d "/" -f 2)"
 
+mkdir -p "${server_dir}"
 install_binary "${fresh_build_name}" "${server_path}"
 backup_rotate "spigot*"
