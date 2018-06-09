@@ -13,16 +13,6 @@ require_input()
     echo "${input}"
 }
 
-
-require_password()
-{
-    input=""
-    while [[ "$input" == "" ]]; do
-        read -r -s -e -p ": " input
-    done
-    echo "${input}"
-}
-
 require_binary()
 {
     if ! [ "$(command -v "$1" 2>/dev/null )" ]; then
@@ -78,14 +68,6 @@ echo "Enter the port that the server will listen on for players:"
 echo "Please make sure this port is not in use by other programs."
 minecraft_port="$(require_input 25565)"
 
-# TODO: Port numbers need to be numbers within a range.
-echo "Enter the port that the server will listen on for rcon:"
-echo "Please make sure this port is not in use by other programs."
-minecraft_rcon_port="$(require_input 25575)"
-
-echo "Enter the rcon password for the server:"
-minecraft_rcon_password="$(require_password)"
-
 # TODO: Make sure this service file doesn't already exist.
 echo "Enter the service name for this server:"
 minecraft_service_name="$(require_input "minecraft")"
@@ -112,10 +94,7 @@ state_default_directory_copied="true"
 
 debug "Populating server.properties."
 server_prop_file="./${temp_home_dir}/server/server.properties"
-echo "rcon.port=${minecraft_rcon_port}" > "${server_prop_file}"
-echo "rcon.password=${minecraft_rcon_password}" > "${server_prop_file}"
 echo "server-port=${minecraft_port}" > "${server_prop_file}"
-chmod 600 "${server_prop_file}"
 
 debug "Configuring uninstaller."
 sed -i "s;^minecraft_user=*\$;minecraft_user=${minecraft_user};g" "./${temp_home_dir}/uninstall.sh"
@@ -141,6 +120,5 @@ state_service_file_copied="true"
 
 echo "Downloading and building initial server software. This can take a while."
 runuser "${minecraft_user}" "${minecraft_home}/update-spigot.sh"
-runuser "${minecraft_user}" "${minecraft_home}/update-mcrcon.sh"
 
 echo "Installation complete. Run systemctl start ${minecraft_service_name} to start the server."
