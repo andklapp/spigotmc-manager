@@ -5,14 +5,12 @@ Nice=5
 KillMode=none
 SuccessExitStatus=0 1
 
-ProtectHome=true
 ProtectSystem=full
 PrivateDevices=true
 PrivateTmp=true
 
 # Change these directories to where the rest of the bundle is stored.
 ReadWriteDirectories=/home/minecraft
-WorkingDirectory=/home/minecraft/server
 ExecStart=/home/minecraft/server-start.sh
 ExecStop=/home/minecraft/server-stop.sh
 
