@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
-# shellcheck source=minecraft.default/lib.common.sh
-source "${HOME}/lib.common.sh" || exit 1
 
 minecraft_user=minecraft
 minecraft_home=/home/minecraft
 minecraft_service_file=/etc/systemd/system/minecraft.service
+
+# shellcheck source=minecraft.default/lib.common.sh
+source "${minecraft_home}/lib.common.sh" || exit 1
 
 require_root
 

@@ -51,7 +51,7 @@ require_root
 
 require_binary "git"
 require_binary "java"
-require_binary "gcc"
+require_binary "tmux"
 
 # TODO: Eventually add normal options for this.
 
